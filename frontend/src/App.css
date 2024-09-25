@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  background: url('./../public/3d-abstract-wave-pattern-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #040504;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Cambié a 100% para no superar el contenedor */
+  max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  background: rgba(206, 188, 205, 0.322);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(252, 250, 250, 0.1);
+  overflow: hidden;
+  padding: 20px; /* Añade algo de espacio interno */
+}
+
+.TopHeader {
+  width: 100%;
+  background: #12121486;
+  color: #fff;
+  text-align: center;
+  font-size: 3em;
+  padding: 20px;
+  height: 100px;
+}
+
+#header {
+  padding-top: 20px;
+  display: flex; 
+}
+
+#menudeslizable {
+  margin-right: 50px;
+  display: flex;
+}
+
+#menu {
+  margin-right: 80px; /* Espacio a la derecha del icono del menú */
+}
+
+.Menu {
+  width: 250px;
+  background: #eaadff;
+  color: #fff;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Menu.visible {
+  display: flex;
+}
+
+.Menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Menu li {
+  margin: 10px 0;
+}
+
+.Content {
+  flex: 1;
+  padding: 20px;
+  background: #ecf0f1;
+}
+
+.LoginForm {
+  background: rgba(255, 255, 255, 0.514); /* Fondo blanco semi-transparente */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  max-width: 400px; 
+  text-align: center; 
+}
+
+.LoginForm ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.LoginForm li {
+  margin-bottom: 20px;
+}
+
+.LoginForm label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.LoginForm input[type="text"],
+.LoginForm input[type="password"] {
+  width: calc(100% - 20px); /* Ajustar ancho con margen para centrar */
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Línea inferior semi-transparente */
+  background-color: transparent; /* Fondo transparente */
+  margin: 10px 0; /* Margen vertical para centrar */
+  box-sizing: border-box; /* Ajustar tamaño con borde */
+  transition: border-bottom 0.3s; /* Transición de borde */
+}
+
+.LoginForm input[type="text"]:focus,
+.LoginForm input[type="password"]:focus {
+  border-bottom-color: #ffffff; /* Color de línea al enfocar */
+  outline: none;
+}
+
+.LoginForm input[type="submit"] {
+  background: #060108;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px; /* Espacio entre el botón y los campos */
+}
+
+.LoginForm input[type="submit"]:hover {
+  background: #ce91e7;
+}
+
+.NoEmptyErrors {
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+#LoginButton {
+  background-color: #642111;
+  color: #fff; /* Color del texto del botón */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px; /* Ajuste de margen superior */
+  width: 100%; /* Ancho al 100% del contenedor */
+  box-sizing: border-box; /* Incluir padding y border en el ancho */
+}
+
+#LoginButton:hover {
+  background-color: #8a295921;
+}
+
+#LoginButton:focus {
+  outline: none;
+}
+
+#LoginButton:active {
+  background-color: #dac3da;
+}
+
+#password,
+#username {
+  background-color: transparent;
+}
+
+#puntito {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Oculta los puntos de la lista */
+}

@@ -1,0 +1,24 @@
+#mainMenu {
+    background-color: rgb(255, 13, 85);
+    color: white;
+  }
+  
+  #mainMenu ul{
+    padding: 0;
+    margin: 0;
+     }
+  
+  #mainMenu ul li{
+   list-style: none;
+   min-width: 8em;
+   padding: .2em .5em;
+    }
+  
+    #mainMenu ul li:hover {
+      background-color: #ffffff;
+    }
+  
+  #mainMenu ul li a {
+  text-decoration:none ;
+  color: white;
+  }

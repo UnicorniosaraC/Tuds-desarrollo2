@@ -1,0 +1,54 @@
+components:
+  schemas:
+    Login:
+      type: object
+      properties:
+        username:
+          type: string
+          example: Admin
+        password:
+          type: string
+          example: 1234
+      required:
+        - username
+        - password
+
+    AuthorizationToken:
+      type: object
+      properties:
+        bearer:
+          type: string
+          example: "your-jwt-token"
+
+paths:
+  /login:
+    post:
+      tags:
+        - Login
+      summary: Login into system
+      consumes:
+        - application/json
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthorizationToken'
+        '400':
+          description: Parameters error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Error message"
+

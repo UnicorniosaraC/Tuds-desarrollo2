@@ -1,0 +1,5 @@
+{
+    "port":4001,
+    "jwtPassword": "rp;'4eC,AKR`3GB$PhjSLX",
+     "db": "mongodb://localhost:27017/tuds-da"
+}

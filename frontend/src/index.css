@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;    /* Centrado vertical */
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #242424;
+}
+
+.container {
+  text-align: center; 
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column; /* Alinea elementos en columna */
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
+  gap: 20px; /* Separación entre los elementos */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  max-width: 300px; /* Controla el ancho del campo */
+  padding: 10px;
+  margin-bottom: 1rem; /* Espacio entre los campos */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.514);
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  max-width: 300px; /* Controla el ancho del botón */
+  margin-top: 1rem; /* Espacio entre los botones */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+  background-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Para dispositivos con esquema de color claro */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #f3f3f3;
+  }
+
+  button {
+    background-color: #f9f9f9;
+    color: #000;
+  }
+
+  button:hover {
+    border-color: #646cff;
+    background-color: #ffffff;
+    color: #fff;
+  }
+
+  .container {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #213547;
+  }
+}
