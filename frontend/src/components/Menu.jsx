@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom'
-
 const Menu = ({menuVisibility, roles}) =>{
 
 const items= [
@@ -7,7 +6,7 @@ const items= [
   {
     key: 'login',
     to: 'login',
-    label: 'Login',
+    label: 'Iniciar sesion',
     roles: []
   },
   {
@@ -24,15 +23,14 @@ if (!roles.length){
 } else{
   filteredItems = items.filter(item => item.roles.filter(role => roles.includes(role).length))
 }
-  const lista = filteredItems.map(item=> <li key={item.key}><Link to={item.to}>{item.label}</Link></li>);
+  const lista = filteredItems.map(item=> <button key={item.key}><Link to={item.to}>{item.label}</Link></button>);
 
 return (
   <nav id="mainMenu" style={{display: menuVisibility? '': 'none'}}>
-    <ul>
-        {lista}
-   </ul>  
+    <li>
+      {lista}
+    </li>  
   </nav>
 )
 }
-
 export default Menu

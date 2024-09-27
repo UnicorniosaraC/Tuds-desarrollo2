@@ -6,12 +6,12 @@ const TopHeader = ({ menuVisibility, setMenuVisibility }) => {
   }
 
   return (
-    <div className="TopHeader">
+    <div id="cabeza" className="TopHeader">
       <div id="menudeslizable">
         <Menu onClick={toggleMenuVisibility} />
       </div>
-      <div id="login">
-        Login
+       <div id="login">
+        Bienvenidos
         </div>
     </div>
   );

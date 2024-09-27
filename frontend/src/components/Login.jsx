@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { Api } from '../lib/api'; 
+import "./login.css";
 import NoEmptyErrors from './NoEmptyErrors'; 
 import { useState } from 'react';
 
@@ -43,14 +44,14 @@ const Login =({ setRoles }) => {
   }
 
   return (
-    <div id="Login" className="form">
+    <div className="form">
       <h2>
         INICIAR SISTEMA 
       </h2>
-      <NoEmptyErrors msg={error} />
+        <NoEmptyErrors msg={error} />
       <form onSubmit={login}>
         <ul className="fields">
-          <li className="field">
+          <li  className="field">
             <label htmlFor="username">Nombre:</label>
             <input id="username" name='username' type='text'/>
           </li>

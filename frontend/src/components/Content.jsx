@@ -15,7 +15,6 @@ const Content = ({setRoles}) => {
             <Route path="/" element={<Home/>}/>
             <Route path="*" element={"no encontrado"}/>
         </Routes>
-   
     </div>
   )
 }

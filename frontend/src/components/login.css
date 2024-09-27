@@ -1,0 +1,12 @@
+.fields {
+  list-style: none;
+  text-align: center;
+  padding: unset;
+}
+.fields label{
+  background-color: rgba(0, 0, 0, 0.075);
+  font-family: 'Roboto Medium', sans-serif;
+}
+.form h2 {
+  text-align: center;
+}

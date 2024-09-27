@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: url('./../public/3d-abstract-wave-pattern-background.jpg') no-repeat center center fixed;
+  background: url('/3d-abstract-wave-pattern-background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #040504;
   display: flex;
@@ -79,7 +79,7 @@ body {
 
 .LoginForm {
   background: rgba(255, 255, 255, 0.514); /* Fondo blanco semi-transparente */
-  padding: 40px;
+  padding: 0px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 100%; 
@@ -88,9 +88,9 @@ body {
 }
 
 .LoginForm ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+  padding: 1 1 0 1;
+  margin: 1 1 1 1;
 }
 
 .LoginForm li {
@@ -105,7 +105,7 @@ body {
 
 .LoginForm input[type="text"],
 .LoginForm input[type="password"] {
-  width: calc(100% - 20px); /* Ajustar ancho con margen para centrar */
+  width: calc(100% - 100px); /* Ajustar ancho con margen para centrar */
   padding: 10px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Línea inferior semi-transparente */
@@ -176,4 +176,14 @@ body {
   padding: 0;
   margin: 0;
   list-style: none; /* Oculta los puntos de la lista */
+}
+#mainMenu {
+  text-align: center;
+  list-style: none;
+  color: white;
+}
+a:visited {
+  border: 20px inset #786868;
+  color: rgba(255, 255, 255, 0);
+  text-decoration: none;
 }
