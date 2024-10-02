@@ -33,6 +33,7 @@ const UserList = () => {
           }
 
           return (
+            
             <tr key={user.uuid}>
               <td>{user.username}</td>
               <td>{user.userdisplayName}</td>
@@ -59,7 +60,7 @@ const UserList = () => {
           usuarios
           <Link to='/user-form'><IconAdd className="icon button" alt="agregar" title="agregar usuario" /></Link>
         </caption>
-        <thead>
+        <thead className='hilo'>
           <tr>
             <th>Usuario</th>
             <th>Nombre</th>
