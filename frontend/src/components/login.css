@@ -6,7 +6,10 @@
 .fields label{
   background-color: rgba(0, 0, 0, 0.075);
   font-family: 'Roboto Medium', sans-serif;
+  color: antiquewhite;
+
 }
 .form h2 {
   text-align: center;
+  color: antiquewhite;
 }

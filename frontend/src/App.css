@@ -111,6 +111,7 @@ body {
   margin: 10px 0; /* Margen vertical para centrar */
   box-sizing: border-box; /* Ajustar tamaño con borde */
   transition: border-bottom 0.3s; /* Transición de borde */
+  
 }
 
 .LoginForm input[type="text"]:focus,
