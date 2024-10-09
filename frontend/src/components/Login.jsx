@@ -65,7 +65,7 @@ const Login =({ setRoles }) => {
             </button>
             <Link to='/home'>
               <button type="button">
-                Cancelar
+                Volver
               </button>
             </Link>
           </li>
