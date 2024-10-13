@@ -2,18 +2,24 @@ import {Link} from 'react-router-dom'
 const Menu = ({menuVisibility, roles}) =>{
 
 const items= [
-
   {
     key: 'login',
     to: 'login',
     label: 'Iniciar sesion',
     roles: []
   },
+  
+  {
+    key: 'Catalogo',
+    to: 'Catalogo',
+    label: 'Catalogo',
+    roles: []
+  },
   {
     key: 'user-list',
     to: 'user-list',
     label: 'Usuarios',
-    roles: ['admin'],
+    roles: ['admin',],
   },
 ];
 

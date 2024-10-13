@@ -1,22 +1,24 @@
+
 body {
-  margin: 0;
+  margin: 0px;
   background: url('/3d-abstract-wave-pattern-background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #040504;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 .TopHeader {
   width: 100%;
+  min-width: 100px;
   background: #12121486;
   color: #fff;
   text-align: center;
   font-size: 3em;
   padding: 20px;
   height: 100px;
-  position: sticky; top: 0;
+  position: relative; bottom: 10px;
+  display: inline-block
 }
 #header {
   padding-top: 20px;
@@ -200,10 +202,27 @@ a:visited {
   color: rgba(255, 255, 255, 0);
   text-decoration: none;
 }
+/* estilos about */
 #imagen{
-  position: sticky; top: 0px; right: 0px;
-  border-radius: 10px;
+  position: relative; top: 0px; right: 0px;
 }
 #About{
-  position: relative; top: 100px; right: 100px;
+  position: relative; top: 0px; right: 0px;
+}
+/* estilos login */
+.fields {
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+  display: inline-block
+}
+.fields label{
+  background-color: rgba(0, 0, 0, 0.075);
+  font-family: 'Roboto Medium', sans-serif;
+  color: antiquewhite;
+
+}
+.form h2 {
+  text-align: center;
+  color: antiquewhite;
 }

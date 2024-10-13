@@ -23,16 +23,18 @@ function App() {
   }, [])
 
   return (
-    
-  <div className="App">
+  <section>  
+    <div className="App">
         <TopHeader menuVisibility={menuVisibility} setMenuVisibility={setMenuVisibility}/>
+        </div>
       <div id="body">
         <Content setRoles={setRoles} />
       </div>
     <div id='btnmenu'>
       <Menu menuVisibility={menuVisibility} roles={roles}/>
     </div>
-  </div>
+  </section>
+
   )
 }
 
