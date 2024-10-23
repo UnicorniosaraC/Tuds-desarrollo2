@@ -8,18 +8,17 @@ const items= [
     label: 'Iniciar sesion',
     roles: []
   },
-  
-  {
-    key: 'Catalogo',
-    to: 'Catalogo',
-    label: 'Catalogo',
-    roles: []
-  },
   {
     key: 'user-list',
     to: 'user-list',
     label: 'Usuarios',
     roles: ['admin',],
+  },
+  {
+    key: 'Catalogo',
+    to: 'Catalogo',
+    label: 'Catalogo',
+    roles: []
   },
 ];
 
@@ -29,7 +28,7 @@ if (!roles.length){
 } else{
   filteredItems = items.filter(item => item.roles.filter(role => roles.includes(role).length))
 }
-  const lista = filteredItems.map(item=> <button key={item.key}><Link to={item.to}>{item.label}</Link></button>);
+  const lista = filteredItems.map(item=> <a key={item.key}><Link to={item.to}><button>{item.label}</button></Link></a>);
 
 return (
   <nav id="mainMenu" style={{display: menuVisibility? '': 'none'}}>

@@ -30,7 +30,10 @@ body {
   size: 10 cap;
 
 }
-
+#Icarrito{
+  display: flex;
+  size: 10 cap;
+}
 #menu {
   margin-right: 80px; /* Espacio a la derecha del icono del menú */
 }

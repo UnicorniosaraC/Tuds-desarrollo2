@@ -25,9 +25,10 @@ function App() {
   return (
   <section>  
     <div className="App">
-        <TopHeader menuVisibility={menuVisibility} setMenuVisibility={setMenuVisibility}/>
+       
         </div>
       <div id="body">
+        <TopHeader menuVisibility={menuVisibility} setMenuVisibility={setMenuVisibility}/>
         <Content setRoles={setRoles} />
       </div>
     <div id='btnmenu'>

@@ -1,4 +1,6 @@
 import Menu from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
+import {ShoppingCart} from "@phosphor-icons/react";
 
 const TopHeader = ({ menuVisibility, setMenuVisibility }) => {
   function toggleMenuVisibility() {
@@ -11,7 +13,10 @@ const TopHeader = ({ menuVisibility, setMenuVisibility }) => {
         <Menu onClick={toggleMenuVisibility} />
       </div>
        <div id="login">
-        Bienvenidos
+          Bienvenidos
+        </div>
+        <div id="Icarrito">
+          <Link to ="/cart"> <ShoppingCart size={32}/></Link>
         </div>
     </div>
   );
