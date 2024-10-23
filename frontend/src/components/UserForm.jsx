@@ -16,7 +16,7 @@ const UserForm = () => {
   };
 
   return (
-    <div>
+    <div className='formulariousuario'>
       <h2>Formulario de Usuario</h2>
       <form onSubmit={handleSubmit}>
         <div>

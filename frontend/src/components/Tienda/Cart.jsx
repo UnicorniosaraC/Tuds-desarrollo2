@@ -22,6 +22,9 @@ return(
     <button>
     <Link to ="/catalogo">Volver</Link>
     </button> 
+    <button>
+    <Link to ="/pagar">pagar</Link>
+    </button> 
     </div>
   </section>
   )

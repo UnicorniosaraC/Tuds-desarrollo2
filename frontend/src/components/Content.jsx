@@ -5,6 +5,8 @@ import UserForm from './UserForm';
 import Home from './Home';
 import Catalogo from './Tienda/Catalogo'
 import Cart from './Tienda/Cart'
+import Pagar from './Tienda/Pagar'
+
 
 const Content = ({setRoles}) => {
   return (
@@ -14,6 +16,7 @@ const Content = ({setRoles}) => {
             <Route path="login" element={<Login setRoles={setRoles}/>} />
             <Route path="catalogo" element={<Catalogo/>}/>
             <Route path="Cart" element={<Cart/>}/>
+            <Route path="Pagar" element={<Pagar/>}/>
             <Route path="user-list" element={<UserList />}/>
             <Route path="user-form" element={<UserForm />}/>
             <Route path="/" element={<Home/>}/>
