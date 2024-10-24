@@ -1,6 +1,6 @@
 import Menu from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import {ShoppingCart} from "@phosphor-icons/react";
+import {ShoppingCart,List} from "@phosphor-icons/react";
 
 const TopHeader = ({ menuVisibility, setMenuVisibility }) => {
   function toggleMenuVisibility() {
@@ -10,7 +10,7 @@ const TopHeader = ({ menuVisibility, setMenuVisibility }) => {
   return (
     <div id="cabeza" className="TopHeader">
       <div id="menudeslizable">
-        <Menu onClick={toggleMenuVisibility} />
+        <List size={44} color="#fefbfb" weight="fill" onClick={toggleMenuVisibility} />
       </div>
        <div id="login">
           Bienvenidos
