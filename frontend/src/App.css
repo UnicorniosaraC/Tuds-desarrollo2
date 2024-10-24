@@ -109,16 +109,16 @@ body {
   margin-bottom: 5px;
 }
 
-.LoginForm input[type="text"],
-.LoginForm input[type="password"] {
+.LoginForm input{
   width: calc(100% - 100px); /* Ajustar ancho con margen para centrar */
-  padding: 10px;
+  padding: 0px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Línea inferior semi-transparente */
   background-color: transparent; /* Fondo transparente */
   margin: 10px 0; /* Margen vertical para centrar */
   box-sizing: border-box; /* Ajustar tamaño con borde */
   transition: border-bottom 0.3s; /* Transición de borde */
+  
   
 }
 
@@ -235,6 +235,11 @@ a:visited {
   color: antiquewhite;
 }
 .formulariousuario{
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   color: antiquewhite;
-  text-align: center;
+  border: 2px solid rgb(46, 46, 46);
+  border-radius: 5px;
+  background-color: #040504;
 }
