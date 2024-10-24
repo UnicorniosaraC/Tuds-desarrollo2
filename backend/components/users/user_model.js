@@ -15,7 +15,8 @@ export const UserModel = mongoose.model(
         displayName: String,
         hashedPassword: String,
         isEnabled: Boolean,
-        roles: String,  
+        roles: String,
+        productos:[{ID: String, Precio: String}],  
     })
     );
 
@@ -25,20 +26,13 @@ export class UserMongo {
     }
 
 
-    async create(data){
-        await UserModel.create({
-            uuid: `${data.uuid}`,
-            username: `${data.username}`,
-            displayName: `${data.displayName}`,
-            hashedPassword: `${data.hashedPassword}`,
-
-          }).then(() => {
-            console.log('User created successfully');
-          }).catch((error) => {
-            console.error('Error creating user:', error);
-          });
-          
-
+    async create(data) {
+      try {
+        const Usuario = await UserModel.create(data);
+        return Usuario;
+      } catch (error) {
+        throw new Error(`Error al crear el equipo: ${error.message}`);
+      }
     }
 }
 
