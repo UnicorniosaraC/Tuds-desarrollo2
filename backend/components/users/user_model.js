@@ -14,9 +14,12 @@ export const UserModel = mongoose.model(
         username: String,
         displayName: String,
         hashedPassword: String,
-        isEnabled: Boolean,
         roles: String,
-        productos:[{ID: String, Precio: String}],  
+        productos:[
+        {
+          ID: Number, Precio: Number, Nombre: String, Imagen: String,
+        }
+        ],  
     })
     );
 
@@ -25,13 +28,12 @@ export class UserMongo {
         return UserModel.find(filters).exec();
     }
 
-
     async create(data) {
       try {
         const Usuario = await UserModel.create(data);
         return Usuario;
       } catch (error) {
-        throw new Error(`Error al crear el equipo: ${error.message}`);
+        throw new Error(`Error al crear el usuario: ${error.message}`);
       }
     }
 }

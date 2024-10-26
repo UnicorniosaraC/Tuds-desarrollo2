@@ -64,7 +64,6 @@ const UserList = () => {
           <tr>
             <th>Usuario</th>
             <th>Nombre</th>
-            <th>Habilitado</th>
             <th>Roles</th>
             <th>Acciones</th>
           </tr>

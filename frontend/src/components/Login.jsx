@@ -10,7 +10,6 @@ const Login =({ setRoles }) => {
   function login(evt) {
     evt.preventDefault();
     setError('');
-
     const body = {
       username: evt.target.username.value,
       password: evt.target.password.value,
@@ -27,6 +26,7 @@ const Login =({ setRoles }) => {
 
           sessionStorage.setItem('Authorization', auth)
           sessionStorage.setItem('roles', JSON.stringify(roles));
+          sessionStorage.setItem('uuid', json.userUuid);
 
           Api.defaultHeaders.Authorization = auth;
           setRoles(json.roles || []);

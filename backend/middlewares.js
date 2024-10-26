@@ -67,10 +67,6 @@ function authorizationMiddleware(req, res, next) {
       const userService = Dependency.get('userService');
       const user = await userService.getForUsernameOrNull(data.username);
 
-      if (!user || !user.isEnabled) {
-        throw new InvalidAuthorizationTokenError();
-      }
-
       req.user = user;
 
       next();

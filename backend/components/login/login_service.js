@@ -21,10 +21,6 @@ export class LoginService {
       throw new Error(`No existe el usuario ${data.username}`);
     }
 
-    if (!user.isEnabled) {
-      throw new InvalidCredentialsError(`El usuario: ${data.username} no tiene permitido acceder al sistema`);
-    }
-
     if (!await this.userService.checkPassword(data.password, user.hashedPassword)) {
       throw new InvalidCredentialsError('Contraseña incorrecta');
     }
@@ -39,6 +35,7 @@ export class LoginService {
     return {
       authorizationToken: token,
       roles: user.roles?.split(',').map(role => role.trim()) ?? [],
+      userUuid: user.uuid,
     };
   }
 }

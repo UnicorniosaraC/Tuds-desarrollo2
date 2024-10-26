@@ -1,4 +1,4 @@
-const urlBase = 'http://localhost:4001/api';
+import { urlBase } from "./URL";
 
 export class Api {
 static defaultHeaders ={

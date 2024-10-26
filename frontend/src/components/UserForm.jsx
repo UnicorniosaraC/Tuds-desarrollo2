@@ -9,7 +9,6 @@ const UserForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('');
-  const [isEnabled, setIsEnabled] = useState(false);
   const [Productos, setProductos] =  useState([{ ID: "", Precio: "" }]);
 
 
@@ -22,27 +21,16 @@ const UserForm = () => {
       roles: role,
       password: password,
       Productos: [],
-    }
-    Productos.forEach((Producto, index) => {
-      Usuario.Productos[index] = {
-        ID: Producto.ID,
-        Precio: Producto.Precio
-      };
-    });
-   
+    }   
   try {
     const response = await Api.post('user', { body: Usuario });
 
-    // Imprimir el estado y el cuerpo de la respuesta para depuración
     console.log('Response Status:', response.status);
-    console.log('Response Body:', await response.text()); // Leemos el texto de la respuesta
-
-    // Verifica si la respuesta es OK
+    console.log('Response Body:', await response.text()); 
+  
     if (response.ok) {
-      // Solo intenta leer JSON si la respuesta no es 204
       if (response.status !== 204) {
         const data = await response.json();
-        // Aquí podrías manejar el contenido de `data` si es necesario
       }
       toast.success('Usuario creado correctamente');
       navigate('/Catalogo');
@@ -100,14 +88,6 @@ const UserForm = () => {
             value={role}
             onChange={(e) => setRole(e.target.value)}
             required
-          />
-        </div>
-        <div>
-          <label>Habilitado:</label>
-          <input
-            type="checkbox"
-            checked={isEnabled}
-            onChange={(e) => setIsEnabled(e.target.checked)}
           />
         </div>
         <button type="submit">Guardar</button>
