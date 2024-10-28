@@ -37,14 +37,14 @@
   .Desc {
     font-size: 24px;            /* Tamaño de fuente más pequeño para la descripción */
     margin: 10px 0;             /* Margen superior e inferior para el texto */
-    color: #333;                 /* Color del texto */
+    color:antiquewhite;                 /* Color del texto */
   }
   
   /* Estilo para el precio del producto */
   .Price {
     font-size: 20px;             /* Tamaño de fuente para el precio */
     font-weight: bold;           /* Negrita para hacer que el precio resalte */
-    color: #007BFF;              /* Color azul para el precio */
+    color:antiquewhite;              /* Color azul para el precio */
   }
   .EliminarBtn {
     background-color: #ff4d4d;
@@ -58,4 +58,15 @@
   
   .EliminarBtn:hover {
     background-color: #e60000;
+  }
+  .Cantidad {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  .Total {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
   }

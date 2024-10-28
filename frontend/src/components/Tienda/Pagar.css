@@ -1,0 +1,40 @@
+.totalSection {
+    max-width: 210px;
+    padding: 30px;
+    height: 250px;
+    border: 2px solid rgb(46, 46, 46);
+    text-align: center;
+    margin: 10px 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s;
+    background-color: #000000;
+    box-shadow: 0px 0px 95px 16px #70707036;
+  }
+  
+  .totalSection h2 {
+    margin-bottom: 10px;
+    color:antiquewhite; 
+    text-align: center;
+  }
+  
+  .totalSection p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: antiquewhite;
+    text-align: center;
+  }
+  
+  .groupedProduct {
+    font-size: 1em;
+    margin: 5px 0;
+    color: antiquewhite;
+    list-style: none;
+    align-content: center;
+  }
+  .totalSection button {
+    padding: 10px;
+    margin-bottom: 10px;
+    color:antiquewhite; 
+    text-align: center;
+  }
