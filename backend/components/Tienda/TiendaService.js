@@ -37,4 +37,19 @@ export class TiendaService {
       throw new Error(error.message); // Lanza el mensaje de error recibido
     }
   }
+  async eliminarProducto(userUUID, productIndex) {
+    const user = await UserModel.findOne({ uuid: userUUID });
+    if (!user) {
+      throw new Error('Usuario no encontrado');
+    }
+  
+    if (productIndex < 0 || productIndex >= user.productos.length) {
+      throw new Error('Índice de producto no válido');
+    }
+  
+    // Elimina el producto en la posición especificada
+    user.productos.splice(productIndex, 1);
+    await user.save();
+    return user;
+  }
 }

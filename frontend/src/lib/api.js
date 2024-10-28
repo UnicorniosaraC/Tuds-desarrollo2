@@ -50,4 +50,7 @@ static setMessageForAutoCheck =null
     static post(service, options) {
         return Api.fetch(service, {...options, method: 'POST'});
     }
+    static delete(service, options) {
+        return Api.fetch(service, {...options, method: 'DELETE'});
+    }
 } 

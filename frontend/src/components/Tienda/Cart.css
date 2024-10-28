@@ -46,3 +46,16 @@
     font-weight: bold;           /* Negrita para hacer que el precio resalte */
     color: #007BFF;              /* Color azul para el precio */
   }
+  .EliminarBtn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .EliminarBtn:hover {
+    background-color: #e60000;
+  }

@@ -7,8 +7,7 @@ const Cart = () => {
 
   useEffect(() => {
     const fetchUserProducts = async () => {
-      const userUUID = sessionStorage.getItem('uuid'); // O desde otro almacenamiento global
-      console.log("UUID obtenido:", userUUID); // Log para verificar el UUI
+      const userUUID = sessionStorage.getItem('uuid');
       if (!userUUID) {
         console.error("UUID del usuario no encontrado en sessionStorage");
         return;
@@ -17,7 +16,7 @@ const Cart = () => {
       try {
         const response = await Api.get(`agregar-producto/${userUUID}`);
         const user = await response.json();
-        setProductos(user.productos); // Suponiendo que el array de productos esté en `user.productos`
+        setProductos(user.productos);
       } catch (error) {
         console.error("Error al obtener los productos del usuario:", error);
       }
@@ -26,23 +25,43 @@ const Cart = () => {
     fetchUserProducts();
   }, []);
 
+  // Función para eliminar un producto usando el índice
+  const handleEliminarProducto = async (index) => {
+    const userUUID = sessionStorage.getItem('uuid');
+    if (!userUUID) {
+      console.error("UUID del usuario no encontrado en sessionStorage");
+      return;
+    }
+
+    try {
+      await Api.delete(`eliminar-producto/${userUUID}/${index}`);
+      // Actualiza la lista de productos después de la eliminación
+      setProductos(prevProductos => prevProductos.filter((_, i) => i !== index));
+    } catch (error) {
+      console.error("Error al eliminar el producto:", error);
+    }
+  };
+
   return (
-       <section className="content">
-          {productos.map(product => (
-          <div className="Columna">
+    <section className="content">
+      {productos.map((product, index) => (
+        <div className="Columna" key={index}>
           <div className="linea">
-          <div className="Producto">
-         <div className="ImagenProd">
-           <img src={product.Imagen} style={{ width: '207px', height: 'auto' }}/>
-         </div>
-         <p className="Desc" style={{fontSize:'50px'}}>{product.Nombre}</p>
-         <span className="Price">${product.Precio}
-         </span>
+            <div className="Producto">
+              <div className="ImagenProd">
+                <img src={product.Imagen} alt={product.Nombre} style={{ width: '207px', height: 'auto' }} />
+              </div>
+              <p className="Desc" style={{ fontSize: '50px' }}>{product.Nombre}</p>
+              <span className="Price">${product.Precio}</span>
+              <button className="EliminarBtn" onClick={() => handleEliminarProducto(index)}>
+                Eliminar
+              </button>
+            </div>
           </div>
-          </div>
-          </div>
-          ))}
-       </section>
-     );
-   };
+        </div>
+      ))}
+    </section>
+  );
+};
+
 export default Cart;
