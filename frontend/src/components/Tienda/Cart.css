@@ -1,0 +1,48 @@
+.content {
+    display: flex;                /* Permite que los productos se alineen en una fila */
+    flex-wrap: wrap;             /* Permite que los productos se ajusten a múltiples filas si es necesario */
+    justify-content: center;      /* Centra los productos en el contenedor */
+    padding: 20px;               /* Espaciado interno alrededor del contenedor */  
+    margin-left: 190px;
+  }
+  
+  /* Estilo para cada columna de producto */
+  .Columna {
+    flex: 1 1 300px;             /* Permite que las columnas crezcan y se reduzcan, con un ancho base de 300px */
+    margin: 15px;                /* Espaciado entre cada columna */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor de las columnas */
+    border-radius: 8px;          /* Bordes redondeados */
+    overflow: hidden;            /* Asegura que el contenido no se desborde */
+    background-color: rgba(0, 0, 0, 0.404);     /* Color de fondo blanco para las columnas */
+  }
+  
+  /* Estilo para cada línea dentro de una columna */
+  .linea {
+    padding: 15px;               /* Espaciado interno para la línea */
+  }
+  
+  /* Estilo para el producto */
+  .Producto {
+    text-align: center;          /* Centra el texto y los elementos dentro del producto */
+  }
+  
+  /* Estilo para la imagen del producto */
+  .ImagenProd img {
+    width: 100%;                 /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto;                /* Mantiene la proporción de la imagen */
+    border-radius: 8px;         /* Bordes redondeados para la imagen */
+  }
+  
+  /* Estilo para la descripción del producto */
+  .Desc {
+    font-size: 24px;            /* Tamaño de fuente más pequeño para la descripción */
+    margin: 10px 0;             /* Margen superior e inferior para el texto */
+    color: #333;                 /* Color del texto */
+  }
+  
+  /* Estilo para el precio del producto */
+  .Price {
+    font-size: 20px;             /* Tamaño de fuente para el precio */
+    font-weight: bold;           /* Negrita para hacer que el precio resalte */
+    color: #007BFF;              /* Color azul para el precio */
+  }

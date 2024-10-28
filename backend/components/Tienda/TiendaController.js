@@ -1,5 +1,4 @@
 import { TiendaService } from './TiendaService.js';
-import { UserModel } from '../users/user_model.js';
 export class TiendaController {
   constructor() {
     this.userService = new TiendaService();
@@ -26,5 +25,20 @@ export class TiendaController {
       console.error("Error en obtenerProductos:", error);
       res.status(500).json({ error: error.message });
     }
+    
+  }
+  async obtenerProductosUsuario(req, res) {
+    const { uuid } = req.params;
+
+    try {
+      console.log("Buscando usuario con UUID:", uuid);
+      const user = await this.userService.getUserByUuid(uuid);
+      res.status(200).json({ productos: user.productos });
+    } catch (error) {
+      console.error("Error en obtenerProductosUsuario:", error.message); // Agrega este log para verificar el error
+      res.status(500).json({ error: error.message });
+    }
   }
 }
+
+

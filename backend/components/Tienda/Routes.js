@@ -6,8 +6,9 @@ export function configureTiendaRoutes(router) {
 
 router.post('/agregar-producto',asyncHandler(TiendaController, 'agregarProducto'));
 
-
 router.get('/agregar-producto',asyncHandler(TiendaController, 'obtenerProductos'));
+
+router.get('/agregar-producto/:uuid', asyncHandler (TiendaController, 'obtenerProductosUsuario'));
 }
 
 

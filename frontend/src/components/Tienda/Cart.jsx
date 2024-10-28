@@ -1,52 +1,48 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import { Api } from '../../lib/api';
-import './Catalogo'; // Asegúrate de tener un CSS para tus estilos
+import './Cart.css';
 
 const Cart = () => {
-  const [userProducts, setUserProducts] = useState([]);
-  const userUUID = sessionStorage.getItem('uuid'); // Obtener el UUID del usuario desde el almacenamiento
+  const [productos, setProductos] = useState([]);
 
   useEffect(() => {
     const fetchUserProducts = async () => {
+      const userUUID = sessionStorage.getItem('uuid'); // O desde otro almacenamiento global
+      console.log("UUID obtenido:", userUUID); // Log para verificar el UUI
+      if (!userUUID) {
+        console.error("UUID del usuario no encontrado en sessionStorage");
+        return;
+      }
+
       try {
-        const response = await Api.get(`user/${userUUID}`); // Llamar al endpoint para obtener los productos
-        if (response.ok) {
-          const products = await response.json();
-          setUserProducts(products);
-        }
+        const response = await Api.get(`agregar-producto/${userUUID}`);
+        const user = await response.json();
+        setProductos(user.productos); // Suponiendo que el array de productos esté en `user.productos`
       } catch (error) {
         console.error("Error al obtener los productos del usuario:", error);
       }
     };
 
     fetchUserProducts();
-  }, [userUUID]);
+  }, []);
 
   return (
-    <section>
-      <div className="contenido">
-        <div className="mostrador" id="mostrador">
-          <div className="fila">
-            {userProducts.map((product, index) => (
-              <div key={index} className="producto">
-                <h3>{product.ProductName}</h3>
-                <p>Precio: ${product.Precio}</p>
-              </div>
-            ))}
+       <section className="content">
+          {productos.map(product => (
+          <div className="Columna">
+          <div className="linea">
+          <div className="Producto">
+         <div className="ImagenProd">
+           <img src={product.Imagen} style={{ width: '207px', height: 'auto' }}/>
+         </div>
+         <p className="Desc" style={{fontSize:'50px'}}>{product.Nombre}</p>
+         <span className="Price">${product.Precio}
+         </span>
           </div>
-        </div>
-      </div>
-      <div>
-        <button>
-          <Link to="/catalogo">Volver</Link>
-        </button>
-        <button>
-          <Link to="/pagar">Pagar</Link>
-        </button>
-      </div>
-    </section>
-  );
-};
-
+          </div>
+          </div>
+          ))}
+       </section>
+     );
+   };
 export default Cart;
