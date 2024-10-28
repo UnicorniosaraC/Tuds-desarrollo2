@@ -1,41 +1,46 @@
-import {Link} from 'react-router-dom'
-const Menu = ({menuVisibility, roles}) =>{
+import { Link } from 'react-router-dom';
 
-const items= [
-  {
-    key: 'login',
-    to: 'login',
-    label: 'Iniciar sesion',
-    roles: []
-  },
-  {
-    key: 'user-list',
-    to: 'user-list',
-    label: 'Usuarios',
-    roles: ['admin',],
-  },
-  {
-    key: 'Catalogo',
-    to: 'Catalogo',
-    label: 'Catalogo',
-    roles: []
-  },
-];
+const Menu = ({ menuVisibility, roles }) => {
+  const items = [
+    {
+      key: 'login',
+      to: 'login',
+      label: 'Iniciar sesión',
+      roles: []
+    },
+    {
+      key: 'user-list',
+      to: 'user-list',
+      label: 'Usuarios',
+      roles: ['admin']
+    },
+    {
+      key: 'Catalogo',
+      to: 'Catalogo',
+      label: 'Catálogo',
+      roles: ['User','admin']
+    }
+  ];
 
-let filteredItems;
-if (!roles.length){
-  filteredItems = items.filter(item => !item.roles.lenght);
-} else{
-  filteredItems = items.filter(item => item.roles.filter(role => roles.includes(role).length))
-}
-  const lista = filteredItems.map(item=> <a key={item.key}><Link to={item.to}><button>{item.label}</button></Link></a>);
+  const filteredItems = items.filter(item => 
+    !item.roles.length || item.roles.some(role => roles.includes(role))
+  );
 
-return (
-  <nav id="mainMenu" style={{display: menuVisibility? '': 'none'}}>
-    <li>
-      {lista}
-    </li>  
-  </nav>
-)
-}
-export default Menu
+  const lista = filteredItems.map(item => (
+    <a key={item.key}>
+      <Link to={item.to}>
+        <button>{item.label}</button>
+      </Link>
+    </a>
+  ));
+
+  return (
+    <nav id="mainMenu" style={{ display: menuVisibility ? '' : 'none' }}>
+      <ul>
+        {lista}
+      </ul>
+    </nav>
+  );
+};
+
+export default Menu;
